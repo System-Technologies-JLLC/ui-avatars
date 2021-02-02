@@ -106,10 +106,10 @@ function colorByName(string $name)
             return "DDA0DD";
             break;
         case "K":
-            return "8A2BE2";
+            return "7FFFD4";
             break;
         case "L":
-            return "4B0082";
+            return "7CFC00";
             break;
         case "M":
             return "483D8B";
