@@ -133,13 +133,13 @@ function colorByName(string $name)
             return "4682B4";
             break;
         case "T":
-            return "191970";
+            return "87CEFA";
             break;
         case "U":
             return "2F4F4F";
             break;
         case "V":
-            return "800080";
+            return "FF00FF";
             break;
         case "W":
             return "6B8E23";
