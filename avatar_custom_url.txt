@@ -1,0 +1,3 @@
+https://sleepy-wave-82207.herokuapp.com/api/?uppercase=true&bold=true&size=200&color=FFFFFF&format=svg&name={username}
+
+https://sleepy-wave-82207.herokuapp.com/api/?uppercase=true&bold=true&size=200&color=FFFFFF&format=svg&name={roomId}

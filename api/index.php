@@ -20,7 +20,7 @@ $avatar = new LasseRafn\InitialAvatarGenerator\InitialAvatar();
 if ($input->format === 'svg') {
     header('Content-type: image/svg+xml');
 
-    echo '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' . $input->size . 'px" height="' . $input->size . 'px" viewBox="0 0 ' . $input->size . ' ' . $input->size . '" version="1.1"><' . ($input->rounded ? 'circle' : 'rect') . ' fill="#' . trim(isset($_GET['input->background']) ? $input->background : colorByName($input->name), '#') . '" cx="' . ($input->size / 2) . '" width="' . $input->size . '" height="' . $input->size . '" cy="' . ($input->size / 2) . '" r="' . ($input->size / 2) . '"/><text x="50%" y="50%" style="color: #' . trim($input->color, '#') . '; line-height: 1;font-family: -apple-system, BlinkMacSystemFont, \'Segoe UI\', \'Roboto\', \'Oxygen\', \'Ubuntu\', \'Fira Sans\', \'Droid Sans\', \'Helvetica Neue\', sans-serif;" alignment-baseline="middle" text-anchor="middle" font-size="' . round($input->size * $input->fontSize) . '" font-weight="' . ($input->bold ? 600 : 400) . '" dy=".1em" dominant-baseline="middle" fill="#' . trim($input->color, '#') . '">' . $avatar->name($input->name)
+    echo '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' . $input->size . 'px" height="' . $input->size . 'px" viewBox="0 0 ' . $input->size . ' ' . $input->size . '" version="1.1"><' . ($input->rounded ? 'circle' : 'rect') . ' fill="#' . trim(!isset($_GET['input->background']) ? $input->background : colorByName($input->name), '#') . '" cx="' . ($input->size / 2) . '" width="' . $input->size . '" height="' . $input->size . '" cy="' . ($input->size / 2) . '" r="' . ($input->size / 2) . '"/><text x="50%" y="50%" style="color: #' . trim($input->color, '#') . '; line-height: 1;font-family: -apple-system, BlinkMacSystemFont, \'Segoe UI\', \'Roboto\', \'Oxygen\', \'Ubuntu\', \'Fira Sans\', \'Droid Sans\', \'Helvetica Neue\', sans-serif;" alignment-baseline="middle" text-anchor="middle" font-size="' . round($input->size * $input->fontSize) . '" font-weight="' . ($input->bold ? 600 : 400) . '" dy=".1em" dominant-baseline="middle" fill="#' . trim($input->color, '#') . '">' . $avatar->name($input->name)
         ->length($input->length)
         ->keepCase(!$input->uppercase)
         ->getInitials() . '</text></svg>';
@@ -48,7 +48,7 @@ $image = $avatar->name($input->name)
     ->length($input->length)
     ->fontSize($input->fontSize)
     ->size($input->size)
-    ->background(isset($_GET['input->background']) ? $input->background : colorByName($input->name))
+    ->background(!isset($_GET['input->background']) ? $input->background : colorByName($input->name))
     ->color($input->color)
     ->smooth()
     ->allowSpecialCharacters(false)
