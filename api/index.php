@@ -109,7 +109,7 @@ function colorByName(string $name)
             return "7FFFD4";
             break;
         case "L":
-            return "7CFC00";
+            return "33CCC2";
             break;
         case "M":
             return "483D8B";
@@ -139,7 +139,7 @@ function colorByName(string $name)
             return "2F4F4F";
             break;
         case "V":
-            return "FF00FF";
+            return "33AACC";
             break;
         case "W":
             return "6B8E23";
